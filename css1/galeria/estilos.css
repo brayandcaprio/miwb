@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+    border-radius: 60px;
+    margin: 0;
+    padding: 0;
+
+
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 45px;
+    padding-left: 8%;
+    padding-right: 8;
+}
+
+.logo{
+    color: white;
+    font-size: 30px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+
+}
+nav ul li a:hover{
+    color: rgb(37, 111, 175);
+    transition:.4s ;
+
+ }
+
+body{
+    background-image: url(../img/original.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1{
+    font-weight: 400;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px ;
+    color: white;
+}
+.linea{
+    background: #080108;
+    height: 5px;
+    width: 100%;
+    display: block;
+}
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    width: 90%;
+    margin:auto;
+    grid-gap: 40px;
+    padding: 40px 0;
+    overflow: hidden;
+   
+}
+.galeria img{
+    width: 100%;
+    vertical-align: top;
+    height: 600px;
+    object-fit: cover;
+    transition: transform 0.5s;
+
+}
+.galeria a:hover img{
+    filter: blur(1px);
+    transform: rotate(5deg) scale(1.2);
+}
+
+.light-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: transform .3s ease-in-out;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+
+.light-box img{
+    width: 30vw;
+    max-height:100vh;  
+}
+.light-box:target{
+    transform: scale(1);
+}
+
+.close{
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: red;
+    color: #fff;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50px;
+
+}
+.next{
+    display: block;
+    background:rgb(22, 13, 13) ;
+    color: rgb(148, 132, 132);
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+@media screen and (max-width:400px) {
+    .galeria{
+        grid-template-columns: repeat(auto-fit, minmax(200px ifr))
+        ;
+    }
+    .close{
+        top: 200px;
+        right: 20px;
+    }
+}
+
+
